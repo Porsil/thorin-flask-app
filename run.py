@@ -16,7 +16,7 @@ def index():
 
 @app.route("/about")
 def about():
-    data =[]
+    data = []
     with open("data/company.json", "r") as json_data:
         data = json.load(json_data)
     return render_template("about.html", page_title="About", company=data)
@@ -51,4 +51,5 @@ if __name__ == "__main__":
         host=os.environ.get("IP", "0.0.0.0"),
         port=int(os.environ.get("PORT", "5000")),
         debug=False)
-#debug=True for development - change to debug=False for deployment
+# debug=True for development
+# change to debug=False for deployment
